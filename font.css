@@ -1,0 +1,5 @@
+@font-face {
+    font-family: "Monoton";
+    src: url(./font/Monoton-Regular.woff2) format("woff2"),
+         url(./font/Monoton-Regular.woff)  format("woff");
+}
