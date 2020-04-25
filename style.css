@@ -4,17 +4,55 @@ body {
     background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
   }
 
-  #container {
-    width: 500px;
+#container {
+    width: 700px;
     margin: auto;
   }
 
+/**************************title*******************************/
+#title>p {
+    text-align: center;
+    font-size: 4em;
+    margin: 20px 0 20px 0;
+    transition: all 0.5s;
+    color: #fff;
+    font-family: Monoton;
+    text-shadow: 0 0 10px #fff, 0 0 20px #FF1177, 0 0 40px #FF1177, 0 0 60px #FF1177, 0 0 80px #FF1177 ,0 0 100px #FF1177;
+    
+  }
+#title p:hover {
+    color: #FF1177;
+    animation: none;
+    transition: all 0.5s;
+  }
+
+/*******************************Count*****************************/
+
+#count {
+  text-align: center;
+  font-size: 3em;
+  background-color: transparent;
+  border: transparent;
+  color: #fff;
+  font-family: teko-regular;
+  text-shadow: 0 0 10px #fff, 0 0 20px rgb(43, 173, 212), 0 0 40px rgb(43, 173, 212), 0 0 60px rgb(43, 173, 212);
+
+}
+.center {
+  text-align: center;
+}
+
+
+
+
+/*******************************vinyl****************************/
 #vinyl{
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 300px;
-  height: 300px;
+   margin-left: auto;
+  margin-right: auto; 
+  width: 350px;
+  height: 350px;
+  cursor: pointer;
 }
 
 /********RESPONSIVE*****/

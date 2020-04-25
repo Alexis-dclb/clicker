@@ -1,6 +1,14 @@
-var img=document.getElementById("vinyl")
+var vinyl=document.getElementById("vinyl")
  
 var angle=0;
 setInterval(function(){
-    img.style.transform="rotateZ("+ angle++ +"deg)";
+    vinyl.style.transform="rotateZ("+ angle++ +"deg)";
 }, 10);
+
+
+var compteur = 0;
+function modifier(increment) {
+compteur+=increment;
+document.getElementById('count').value=compteur;
+}
+

@@ -3,3 +3,8 @@
     src: url(./font/Monoton-Regular.woff2) format("woff2"),
          url(./font/Monoton-Regular.woff)  format("woff");
 }
+
+@font-face {
+    font-family: "Teko-regular";
+    src: url(./font/Teko-Regular.woff)  format("woff");
+}
