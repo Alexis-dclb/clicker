@@ -32,10 +32,10 @@ body {
   text-align: center;
   font-size: 3em;
   background-color: transparent;
-  border: transparent;
+  border: none;
   color: #fff;
   font-family: teko-regular;
-  text-shadow: 0 0 10px #fff, 0 0 20px rgb(43, 173, 212), 0 0 40px rgb(43, 173, 212), 0 0 60px rgb(43, 173, 212);
+  text-shadow: 0 0 10px #fff, 0 0 20px rgb(43, 173, 212), 0 0 40px rgb(43, 173, 212), 0 0 60px rgb(43, 173, 212), 0 0 80px rgb(43, 173, 212);
 
 }
 .center {
