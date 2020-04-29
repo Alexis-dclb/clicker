@@ -1,7 +1,14 @@
 var vinyl=document.getElementById("vinyl");
 var ATotalCookie=document.getElementById("count");
+
 var AMultiplicateur=document.getElementById('compteur_multiplicateur');
-var Aprix=document.getElementById('prix');
+var AprixMultiplicateur=document.getElementById('prixMultiplicateur');
+
+var AautoClick=document.getElementById('compteur_autoClick');
+var AprixAutoClick=document.getElementById('prixAutoClick');
+
+var GlowBorderMultiplier = document.getElementsByTagName('h3')[0];
+var GlowBorderAutoClick = document.getElementsByTagName('h3')[1];
 
 
 var angle=0;
@@ -15,34 +22,74 @@ function augmenterNombreCompteur() {
     compteur+=1*AMultiplicateur.innerHTML;
     ATotalCookie.textContent=compteur;
     console.log(compteur)
-
 }
 
-var multiplicateur = 2;
-var prixPardefaut= 50;
-var prix = prixPardefaut;
+var multiplicateur = 1;
+var prixParDefautMultiplicateur= 50;
+var prixMultiplicateur = prixParDefautMultiplicateur;
 function augmenterMultiplicateur(){
         /*******cout de l'augmentation******/
 
-        if(compteur>=prix){
+        if(compteur>=prixMultiplicateur){
             multiplicateur+=1;
             AMultiplicateur.textContent=multiplicateur;
-            compteur = ATotalCookie.innerHTML = ATotalCookie.innerHTML - prix;
+            compteur = compteur-prixMultiplicateur;
+            ATotalCookie.innerHTML = compteur;
 
-            prix =Math.pow(prix,1.20);
-            prix = Math.ceil(prix);
-            Aprix.textContent = prix;
-
-            
-            console.log(prix)
+            prixMultiplicateur =Math.pow(prixMultiplicateur,1.20);
+            prixMultiplicateur = Math.ceil(prixMultiplicateur);
+            AprixMultiplicateur.textContent = prixMultiplicateur;
         }
-
     else{
-        alert("trop pauvre le prix est de "+prix)
+        alert("trop pauvre le prix est de "+prixMultiplicateur)
     }
-
-
 }
 
+var AutoClick = 1;
+var prixParDefautAutoClick= 70;
+var prixAutoClick = prixParDefautAutoClick;
+function augmenterAutoClick(){
+        /*******cout de l'augmentation******/
 
+        if(compteur>=prixAutoClick){
+            AutoClick+=1;
+            AautoClick.textContent=AutoClick;
+            compteur = compteur - prixAutoClick;
+            ATotalCookie.innerHTML = compteur;
+
+            prixAutoClick =Math.pow(prixAutoClick,1.20);
+            prixAutoClick = Math.ceil(prixAutoClick);
+            AprixAutoClick.textContent = prixAutoClick;
+
+            autoClick();
+        }
+    else{
+        alert("trop pauvre le prix est de "+prixAutoClick)
+    }
+}
+
+function CostIsValid(){
+    if(compteur>=prixMultiplicateur){
+        GlowBorderMultiplier.style.animationName ='flickerGreen'
+    }
+    else {
+        GlowBorderMultiplier.style.animationName ='flickerBlue'
+    }
+    if(compteur>=prixAutoClick){
+        GlowBorderAutoClick.style.animationName ='flickerGreen'
+    }
+    else {
+        GlowBorderAutoClick.style.animationName ='flickerPurple'
+    }
+   
+    setTimeout(CostIsValid,200)
+}
+CostIsValid();
+
+
+function autoClick(){
+    setInterval(function(){
+        vinyl.click()
+    },500)
+}
 

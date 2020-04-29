@@ -20,8 +20,8 @@ body {
     transition: all 0.5s;
     color: #fff;
     font-family: Monoton;
-     text-shadow: 0 0 10px #fff, 0 0 20px #FF1177, 0 0 40px #FF1177, 0 0 60px #FF1177, 0 0 80px #FF1177 ,0 0 100px #FF1177;
- 
+/*      text-shadow: 0 0 10px #fff, 0 0 20px #FF1177, 0 0 40px #FF1177, 0 0 60px #FF1177, 0 0 80px #FF1177 ,0 0 100px #FF1177;
+ */ 
   }
 #title p:hover {
     color: #FF1177;
@@ -38,8 +38,8 @@ body {
   border: none;
   color: #fff;
   font-family: teko-regular;
- text-shadow: 0 0 10px #fff, 0 0 20px #2BADD4, 0 0 40px #2BADD4, 0 0 60px #2BADD4, 0 0 80px #2BADD4,0 0 100px #2BADD4;
- 
+/*   text-shadow: 0 0 10px #fff, 0 0 20px #2BADD4, 0 0 40px #2BADD4, 0 0 60px #2BADD4, 0 0 80px #2BADD4,0 0 100px #2BADD4;
+ */  
 }
 .center {
   text-align: center;
@@ -58,7 +58,8 @@ body {
 
 /******************************multiplicateur*************************/
 
-h3 {
+#multiplier {
+  display: inline-block;
   font-family: teko-regular;
   font-size: 30px;
   font-weight: 200;
@@ -68,12 +69,30 @@ h3 {
   border: 4px solid #fff;
   padding: 15px;
   border-radius: 30px;
+  cursor : pointer;
   text-transform: uppercase;
-  animation: flicker 1.5s infinite alternate;     
+  animation: flickerBlue 1.5s infinite alternate;     
+}
+
+#autoClick{
+  display: inline-block;
+  font-family: teko-regular;
+  font-size: 30px;
+  font-weight: 200;
+  width: 150px;
+  margin-left: 120px;
+  text-align: center;
+  color: #fff;
+  border: 4px solid #fff;
+  padding: 15px;
+  cursor : pointer;
+  border-radius: 30px;
+  text-transform: uppercase;
+  animation: flickerPurple 1.5s infinite alternate;     
 }
 
 /* Animate neon flicker */
-@keyframes flicker {
+@keyframes flickerBlue {
     
     0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
       
@@ -87,15 +106,34 @@ h3 {
         box-shadow: none;
     }    
 }
-
-
-
-
-
-
-
-
-
+@keyframes flickerPurple {
+    
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    
+      text-shadow: 0 0 10px #fff,0 0 20px #f40, 0 0 40px #f40, 0 0 60px #f40;
+      box-shadow: 0 0 10px #fff, inset 0 0 10px #fff, 0 0 20px #A915F2, inset 0 0 20px #A915F2, 0 0 40px #A915F2, inset 0 0 40px #A915F2, 0 0 60px #A915F2;
+     
+  }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+      box-shadow: none;
+  }    
+}
+@keyframes flickerGreen {
+    
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    
+      text-shadow: 0 0 10px #fff,0 0 20px #f40, 0 0 40px #f40, 0 0 60px #f40;
+      box-shadow: 0 0 10px #fff, inset 0 0 10px #fff, 0 0 20px #3FF215, inset 0 0 20px #3FF215, 0 0 40px #3FF215, inset 0 0 40px #3FF215, 0 0 60px #3FF215;
+     
+  }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+      box-shadow: none;
+  }    
+}
 
 
 /********RESPONSIVE*****/
