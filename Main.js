@@ -10,6 +10,7 @@ var AprixAutoClick=document.getElementById('prixAutoClick');
 var GlowBorderMultiplier = document.getElementsByTagName('h3')[0];
 var GlowBorderAutoClick = document.getElementsByTagName('h3')[1];
 
+var AtimeLeft = document.getElementById('timeLeft')
 
 var angle=0;
 setInterval(function(){
@@ -37,7 +38,7 @@ function afficherPrixAutoClick(){
 /**********************SCORE****************** */
 var compteur = 0;
 function augmenterNombreCompteur() {
-    compteur+=1*AMultiplicateur.innerHTML;
+    compteur+=multiplicateur;
     afficherScore();
 }
 
@@ -94,6 +95,40 @@ function autoClick(){
         vinyl.click()
     },500)
 }
+
+/**********************BONUS***************************************/
+dcpt=30;
+function switchBonus(){
+    vinyl.onclick=bonusx4;
+    
+    timer =setInterval(function timeLeft(){
+        if(dcpt>0){
+            --dcpt;
+            AtimeLeft.textContent=dcpt;
+        }
+        else{
+            clearInterval(timer);
+        }
+        console.log(dcpt)
+    },1000);
+}
+
+function bonusx4(){
+    bonus = multiplicateur*4;
+    compteur+=bonus;
+    afficherScore();
+    
+}
+
+
+
+
+
+
+
+
+
+
 
 /************************CHANGEMENT COULEUR QUAND ISVALID*********** */
 function CostIsValid(){

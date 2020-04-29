@@ -63,7 +63,7 @@ body {
   font-family: teko-regular;
   font-size: 30px;
   font-weight: 200;
-  width: 100px;
+  width: 150px;
   text-align: center;
   color: #fff;
   border: 4px solid #fff;
@@ -80,7 +80,8 @@ body {
   font-size: 30px;
   font-weight: 200;
   width: 150px;
-  margin-left: 120px;
+  margin-left: 60px;
+  margin-right: 60px;
   text-align: center;
   color: #fff;
   border: 4px solid #fff;
@@ -90,6 +91,22 @@ body {
   text-transform: uppercase;
   animation: flickerPurple 1.5s infinite alternate;     
 }
+#bonus {
+  display: inline-block;
+  font-family: teko-regular;
+  font-size: 30px;
+  font-weight: 200;
+  width: 150px;
+  text-align: center;
+  color: #fff;
+  border: 4px solid #fff;
+  padding: 15px;
+  border-radius: 30px;
+  cursor : pointer;
+  text-transform: uppercase;
+  animation: flickerYellow 1.5s infinite alternate;     
+}
+
 
 /* Animate neon flicker */
 @keyframes flickerBlue {
@@ -112,6 +129,20 @@ body {
     
       text-shadow: 0 0 10px #fff,0 0 20px #f40, 0 0 40px #f40, 0 0 60px #f40;
       box-shadow: 0 0 10px #fff, inset 0 0 10px #fff, 0 0 20px #A915F2, inset 0 0 20px #A915F2, 0 0 40px #A915F2, inset 0 0 40px #A915F2, 0 0 60px #A915F2;
+     
+  }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+      box-shadow: none;
+  }    
+}
+@keyframes flickerYellow {
+    
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    
+      text-shadow: 0 0 10px #fff,0 0 20px #f40, 0 0 40px #f40, 0 0 60px #f40;
+      box-shadow: 0 0 10px #fff, inset 0 0 10px #fff, 0 0 20px #F2F115, inset 0 0 20px #F2F115, 0 0 40px #F2F115, inset 0 0 40px #F2F115, 0 0 60px #F2F115;
      
   }
   

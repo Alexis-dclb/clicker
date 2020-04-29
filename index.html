@@ -3,7 +3,6 @@
 <head>
   <title>Clicker</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="animation.css">
   <link rel="stylesheet" href="font.css">
 </head>
 
@@ -19,12 +18,16 @@
 
       <div class="multiplicateur white">
         <h3 onclick="augmenterMultiplicateur()" id="multiplier"> 
-          Click x<span id="compteur_multiplicateur">1</span> 
+          Click x<span id="compteur_multiplicateur">1</span> <br>
           cost : <span id="prixMultiplicateur">50</span>
         </h3>
         <h3 onclick="augmenterAutoClick()" id="autoClick"> 
           autoClick x<span id="compteur_autoClick">1</span> 
           cost : <span id="prixAutoClick">70</span>
+        </h3>
+        <h3 onclick="switchBonus()" id="bonus"> 
+          Bonus click x4<br>
+          time left : <span id="timeLeft">30</span>
         </h3>
       </div>
     </div>
