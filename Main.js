@@ -97,21 +97,28 @@ function autoClick(){
 }
 
 /**********************BONUS***************************************/
-dcpt=30;
+let dcpt = 30;
 function switchBonus(){
     vinyl.onclick=bonusx4;
     
-    timer =setInterval(function timeLeft(){
-        if(dcpt>0){
-            --dcpt;
-            AtimeLeft.textContent=dcpt;
+       if(typeof running === "undefined" || !running) {
+            running = true;
+            timer =setInterval( function timeLeft() {
+                    if(dcpt>0){
+                        --dcpt;
+                        AtimeLeft.textContent=dcpt;
+                    }
+                    else if (dcpt==0){
+                        vinyl.onclick=augmenterNombreCompteur;
+                    }
+                    else{
+                        running = false;
+                        clearInterval(timer);
+                    }
+                },1000);
         }
-        else{
-            clearInterval(timer);
-        }
-        console.log(dcpt)
-    },1000);
-}
+    }
+
 
 function bonusx4(){
     bonus = multiplicateur*4;
