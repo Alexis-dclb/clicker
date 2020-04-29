@@ -20,8 +20,8 @@ body {
     transition: all 0.5s;
     color: #fff;
     font-family: Monoton;
-/*      text-shadow: 0 0 10px #fff, 0 0 20px #FF1177, 0 0 40px #FF1177, 0 0 60px #FF1177, 0 0 80px #FF1177 ,0 0 100px #FF1177;
- */ 
+    text-shadow: 0 0 10px #fff, 0 0 20px #FF1177, 0 0 40px #FF1177, 0 0 60px #FF1177, 0 0 80px #FF1177 ,0 0 100px #FF1177;
+  
   }
 #title p:hover {
     color: #FF1177;
@@ -38,8 +38,8 @@ body {
   border: none;
   color: #fff;
   font-family: teko-regular;
-/*   text-shadow: 0 0 10px #fff, 0 0 20px #2BADD4, 0 0 40px #2BADD4, 0 0 60px #2BADD4, 0 0 80px #2BADD4,0 0 100px #2BADD4;
- */  
+  text-shadow: 0 0 10px #fff, 0 0 20px #2BADD4, 0 0 40px #2BADD4, 0 0 60px #2BADD4, 0 0 80px #2BADD4,0 0 100px #2BADD4;
+   
 }
 .center {
   text-align: center;
