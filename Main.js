@@ -17,12 +17,31 @@ setInterval(function(){
 }, 10);
 
 
+
+function afficherScore(){
+    ATotalCookie.textContent=compteur;
+}
+function afficherMultiplicateur(){
+    AMultiplicateur.textContent=multiplicateur;
+}
+function afficherPrixMultiplicateur(){
+    AprixMultiplicateur.textContent = prixMultiplicateur;
+}
+function afficherAutoClick(){
+    AautoClick.textContent=AutoClick;
+}
+function afficherPrixAutoClick(){
+    AprixAutoClick.textContent = prixAutoClick;
+}
+
+/**********************SCORE****************** */
 var compteur = 0;
 function augmenterNombreCompteur() {
     compteur+=1*AMultiplicateur.innerHTML;
-    ATotalCookie.textContent=compteur;
-    console.log(compteur)
+    afficherScore();
 }
+
+/********************MULTIPLICATEUR************ */
 
 var multiplicateur = 1;
 var prixParDefautMultiplicateur= 50;
@@ -32,19 +51,21 @@ function augmenterMultiplicateur(){
 
         if(compteur>=prixMultiplicateur){
             multiplicateur+=1;
-            AMultiplicateur.textContent=multiplicateur;
             compteur = compteur-prixMultiplicateur;
-            ATotalCookie.innerHTML = compteur;
-
+            
             prixMultiplicateur =Math.pow(prixMultiplicateur,1.20);
             prixMultiplicateur = Math.ceil(prixMultiplicateur);
-            AprixMultiplicateur.textContent = prixMultiplicateur;
+
+            afficherScore();
+            afficherMultiplicateur();
+            afficherPrixMultiplicateur();
         }
-    else{
-        alert("trop pauvre le prix est de "+prixMultiplicateur)
-    }
+        else{
+            alert("trop pauvre le prix est de "+prixMultiplicateur)
+        }
 }
 
+/*********************AUTOCLICK******************** */
 var AutoClick = 1;
 var prixParDefautAutoClick= 70;
 var prixAutoClick = prixParDefautAutoClick;
@@ -53,21 +74,28 @@ function augmenterAutoClick(){
 
         if(compteur>=prixAutoClick){
             AutoClick+=1;
-            AautoClick.textContent=AutoClick;
             compteur = compteur - prixAutoClick;
-            ATotalCookie.innerHTML = compteur;
-
+            
             prixAutoClick =Math.pow(prixAutoClick,1.20);
             prixAutoClick = Math.ceil(prixAutoClick);
-            AprixAutoClick.textContent = prixAutoClick;
 
+            afficherScore();
+            afficherAutoClick();
+            afficherPrixAutoClick();
             autoClick();
         }
-    else{
-        alert("trop pauvre le prix est de "+prixAutoClick)
+        else{
+            alert("trop pauvre le prix est de "+prixAutoClick)
+        }
     }
+
+function autoClick(){
+    setInterval(function(){
+        vinyl.click()
+    },500)
 }
 
+/************************CHANGEMENT COULEUR QUAND ISVALID*********** */
 function CostIsValid(){
     if(compteur>=prixMultiplicateur){
         GlowBorderMultiplier.style.animationName ='flickerGreen'
@@ -86,10 +114,4 @@ function CostIsValid(){
 }
 CostIsValid();
 
-
-function autoClick(){
-    setInterval(function(){
-        vinyl.click()
-    },500)
-}
 
