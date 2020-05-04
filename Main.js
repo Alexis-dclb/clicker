@@ -9,6 +9,7 @@ var AprixAutoClick=document.getElementById('prixAutoClick');
 
 var GlowBorderMultiplier = document.getElementsByTagName('h3')[0];
 var GlowBorderAutoClick = document.getElementsByTagName('h3')[1];
+var GlowBorderBonus = document.getElementsByTagName('h3')[2];
 
 var AtimeLeft = document.getElementById('timeLeft')
 
@@ -97,8 +98,9 @@ function autoClick(){
 }
 
 /**********************BONUS***************************************/
-let dcpt = 30;
+var dcpt = 30;
 function switchBonus(){
+    GlowBorderBonus.style.animationName= 'flickerGreen';
     vinyl.onclick=bonusx4;
     
        if(typeof running === "undefined" || !running) {
@@ -107,13 +109,18 @@ function switchBonus(){
                     if(dcpt>0){
                         --dcpt;
                         AtimeLeft.textContent=dcpt;
-                    }
-                    else if (dcpt==0){
-                        vinyl.onclick=augmenterNombreCompteur;
+                        console.log(dcpt)
+
                     }
                     else{
                         running = false;
                         clearInterval(timer);
+
+                        vinyl.onclick=augmenterNombreCompteur;
+                        dcpt=30;
+                        AtimeLeft.textContent=dcpt;
+                        GlowBorderBonus.style.animationName= 'flickerYellow'
+
                     }
                 },1000);
         }
@@ -126,12 +133,21 @@ function bonusx4(){
     afficherScore();
     
 }
+function entierAleatoire(min, max)
+{
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+var une_minutes= 60000;
+var dix_minutes= 80000;
 
+timeBetweenBonus = entierAleatoire(une_minutes, dix_minutes);
+console.log(timeBetweenBonus/60000);
 
-
-
-
-
+function miseEnAttente()
+{
+   setIntervalid = setInterval(switchBonus,timeBetweenBonus);   
+}
+miseEnAttente()
 
 
 
